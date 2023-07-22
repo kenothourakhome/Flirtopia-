@@ -10,15 +10,11 @@ Our vision for Flirtopia is to be the go-to platform for modern, playful dating.
 We aim to create a vibrant community of users who embrace flirting as a natural way to form connections and find love, all within a secure and respectful environment.
 
 ### Features
-Playful Flirting: Flirtopia encourages playful and genuine interactions between users. 
-Through creative and engaging features, users can initiate flirty conversations, exchange compliments, and enjoy the thrill of connecting with new people.
-Matching Algorithm: Our smart matching algorithm ensures that users are paired with potential matches based on their interests, preferences, and compatibility,
-increasing the likelihood of finding meaningful connections.
-User Profiles: Users can create personalized profiles, showcasing their personality, hobbies, and interests. This enables users to express themselves authentically
-and find like-minded individuals.
-Messaging: Flirtopia offers a messaging system that enables users to chat with their matches. The communication fosters a sense of excitement and immediacy in getting 
-to know each other.
-Dynamic User Experience: The app's user-friendly interface and intuitive design provide a dynamic and enjoyable user experience, making the process of finding matches and 
+* Playful Flirting: Flirtopia encourages playful and genuine interactions between users. Through creative and engaging features, users can initiate flirty conversations, exchange compliments, and enjoy the thrill of connecting with new people.
+* Matching Algorithm: Our smart matching algorithm ensures that users are paired with potential matches based on their interests, preferences, and compatibility,increasing the likelihood of finding meaningful connections.
+* User Profiles: Users can create personalized profiles, showcasing their personality, hobbies, and interests. This enables users to express themselves authentically and find like-minded individuals.
+* Messaging: Flirtopia offers a messaging system that enables users to chat with their matches. The communication fosters a sense of excitement and immediacy in getting to know each other.
+* Dynamic User Experience: The app's user-friendly interface and intuitive design provide a dynamic and enjoyable user experience, making the process of finding matches and 
 flirting online an exciting journey.
 
 ### Getting Started
