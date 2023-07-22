@@ -5,7 +5,7 @@ Flirtopia
 Flirtopia is a dating app that caters to young, adventurous, and open-minded individuals who are seeking romantic connections in a playful and light-hearted atmosphere. 
 The app is designed for those who believe in the power of flirting as a genuine means of connection and want to experience meaningful relationships.
 
-Project Problem/Solution
+### Project Problem/Solution
 Our vision for Flirtopia is to be the go-to platform for modern, playful dating. 
 We aim to create a vibrant community of users who embrace flirting as a natural way to form connections and find love, all within a secure and respectful environment.
 
