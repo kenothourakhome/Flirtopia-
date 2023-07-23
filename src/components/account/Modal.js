@@ -22,10 +22,10 @@ function Modal({ isOpen, onClose, children }) {
    backgroundColor: "#fff",
    borderRadius: "8px",
    maxWidth: "100%",
-   maxHeight: "90%", // Set a fixed maximum height for the modal content
+   maxHeight: "90%",  
    padding: "10px",
-   margin: "10px", // Add margin from the sides and top
-   overflow: "auto", // Add scrollable overflow
+   margin: "10px", 
+   overflow: "auto",  
  };
 
   return (
