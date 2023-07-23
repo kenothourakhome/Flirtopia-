@@ -14,6 +14,7 @@ import Profiles from "./components/account/Profiles";
 import Messages from "./components/account/Messages";
 import Favorites from "./components/account/Favorites";
 import ProfileData from "./components/account/ProfileData";
+import Error from "./components/Error";
 function App() {
   return (
     <Router className="App">
@@ -33,6 +34,7 @@ function App() {
           <Route path="/home/favourites" element={<Favorites />} />
           <Route path="/home/viewedprofile" element={<ProfileData />} />
         </Route>
+        <Route path="*" element={<Error />}/>
       </Routes>
       <Footer />
     </Router>

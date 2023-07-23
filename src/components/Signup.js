@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Signup() {
   return (
@@ -14,14 +15,11 @@ function Signup() {
         <p>
           By creating an account you agree to our{" "}
           {/* <a href="#" style={{ color: "dodgerblue" }}> Terms & Privacy</a> */}
-          
         </p>
         <button type="submit">Signup</button>
       </form>
       <p>
-        Have an account ? Then Sign in {" "}
-        {/* <a href="#" style={{ color: "dodgerblue" }}> Sign in </a> */}
-        .
+        Have an account ? Then Sign in <Link to="/signup">Signup</Link>.
       </p>
     </div>
   );

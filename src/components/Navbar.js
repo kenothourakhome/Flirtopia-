@@ -1,23 +1,14 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav>
-      <ul>
-        <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#">Features</a>
-        </li>
-        <li>
-          <a href="#">Safety</a>
-        </li>
-        <li>
-          <a href="#">Compatibility</a>
-        </li>
-      </ul>
-    </nav>
+    <NavLink>
+      <Link to="/about">About</Link>
+      <Link to="/features">Features</Link>
+      <Link to="/safety">Safety</Link>
+      <Link to="/compatibility">Compatibility</Link>
+    </NavLink>
   );
 }
 
