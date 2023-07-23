@@ -8,6 +8,8 @@ function Account() {
     first_name: "John",
     last_name: "Doe",
     username: "johndoe",
+    profile:
+      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80",
     email: "john@example.com",
     age: 30,
     location: "New York",
@@ -52,8 +54,37 @@ function Account() {
     setIsModalOpen(false); // Close the modal after submitting
   };
 
+  ///  Drop downs
+  const cities = ["Nairobi", "Mombasa", "Nakuru", "Kisumu"];
+  const genders = ["Male", "Female"];
+  const maritalStatuses = [
+    "Single",
+    "In a relationship",
+    "Married",
+    "Divorced",
+    "Separated",
+  ];
+  const ethnicities = ["African", "Caucasian", "Asian", "Other"];
+  const livingWithOptions = ["Alone", "With Family", "With Roommates"];
+  const educationLevels = ["College", "Bachelors Degree", "Masters", "None"];
+  const numberOfChildrenOptions = ["None", "1", "2", "3", "4", "5+"];
+  const drinkingHabitsOptions = [
+    "Social Drinker",
+    "Occasional Drinker",
+    "Regular Drinker",
+    "Doesn't Drink",
+  ];
+  const smokingHabitsOptions = [
+    "Smoker",
+    "Non-Smoker",
+    "Occasional Smoker",
+    "Regular Smoker",
+    "Quit Smoking",
+  ];
+
   return (
     <div className="account">
+      <img src={formData.profile} alt="avatar" />
       <table>
         <tbody>
           <tr>
@@ -133,6 +164,11 @@ function Account() {
             <td>{formData.smoking_habits}</td>
           </tr>
           <tr>
+            <td>Profile URL:</td>
+            <td>{formData.profile}</td>
+          </tr>
+
+          <tr>
             <td>Passion:</td>
             <td>{formData.passion}</td>
           </tr>
@@ -166,7 +202,7 @@ function Account() {
               type="text"
               name="first_name"
               value={formData.first_name}
-              onChange={handleChange}
+              readOnly
             />
           </label>
           <label>
@@ -175,6 +211,23 @@ function Account() {
               type="text"
               name="last_name"
               value={formData.last_name}
+              readOnly
+            />
+          </label>
+          <label>
+            Email:
+            <input type="text" name="email" value={formData.email} readOnly />
+          </label>
+          <label>
+            Age:
+            <input type="text" name="age" value={formData.age} readOnly />
+          </label>
+          <label>
+            Profile URL:
+            <input
+              type="url"
+              name="profile"
+              value={formData.profile}
               onChange={handleChange}
             />
           </label>
@@ -188,58 +241,64 @@ function Account() {
             />
           </label>
           <label>
-            Email:
-            <input
-              type="text"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Age:
-            <input
-              type="text"
-              name="age"
-              value={formData.age}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
             Location:
-            <input
-              type="text"
+            <select
               name="location"
               value={formData.location}
               onChange={handleChange}
-            />
+              id="option"
+            >
+              {cities.map((city) => (
+                <option key={city} value={city}>
+                  {city}
+                </option>
+              ))}
+            </select>
           </label>
           <label>
             Gender:
-            <input
-              type="text"
+            <select
               name="gender"
               value={formData.gender}
               onChange={handleChange}
-            />
+              id="option"
+            >
+              {genders.map((gender) => (
+                <option key={gender} value={gender}>
+                  {gender}
+                </option>
+              ))}
+            </select>
           </label>
           <label>
             Seeking Gender:
-            <input
-              type="text"
+            <select
               name="seeking_gender"
               value={formData.seeking_gender}
               onChange={handleChange}
-            />
+              id="option"
+            >
+              {genders.map((gender) => (
+                <option key={gender} value={gender}>
+                  {gender}
+                </option>
+              ))}
+            </select>
           </label>
           <label>
             Marital Status:
-            <input
-              type="text"
+            <select
               name="marital_status"
               value={formData.marital_status}
               onChange={handleChange}
-            />
+              id="option"
+            >
+              {maritalStatuses.map((status) => (
+                <option key={status} value={status}>
+                  {status}
+                </option>
+              ))}
+            </select>
           </label>
           <label>
             Bio:
@@ -270,57 +329,93 @@ function Account() {
           </label>
           <label>
             Ethnicity:
-            <input
-              type="text"
+            <select
               name="ethnicity"
               value={formData.ethnicity}
               onChange={handleChange}
-            />
+              id="option"
+            >
+              {ethnicities.map((ethnicity) => (
+                <option key={ethnicity} value={ethnicity}>
+                  {ethnicity}
+                </option>
+              ))}
+            </select>
           </label>
           <label>
             Living With:
-            <input
-              type="text"
+            <select
               name="living_with"
               value={formData.living_with}
               onChange={handleChange}
-            />
+              id="option"
+            >
+              {livingWithOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
           </label>
           <label>
             Education Level:
-            <input
-              type="text"
+            <select
               name="education_level"
               value={formData.education_level}
               onChange={handleChange}
-            />
+              id="option"
+            >
+              {educationLevels.map((level) => (
+                <option key={level} value={level}>
+                  {level}
+                </option>
+              ))}
+            </select>
           </label>
           <label>
             No. of Children:
-            <input
-              type="text"
+            <select
               name="no_of_children"
               value={formData.no_of_children}
               onChange={handleChange}
-            />
+              id="option"
+            >
+              {numberOfChildrenOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
           </label>
           <label>
             Drinking Habits:
-            <input
-              type="text"
+            <select
               name="drinking_habits"
               value={formData.drinking_habits}
               onChange={handleChange}
-            />
+              id="option"
+            >
+              {drinkingHabitsOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
           </label>
           <label>
             Smoking Habits:
-            <input
-              type="text"
+            <select
               name="smoking_habits"
               value={formData.smoking_habits}
               onChange={handleChange}
-            />
+              id="option"
+            >
+              {smokingHabitsOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
           </label>
           <label>
             Passion:
@@ -329,6 +424,7 @@ function Account() {
               name="passion"
               value={formData.passion}
               onChange={handleChange}
+              id="option"
             />
           </label>
           <label>
