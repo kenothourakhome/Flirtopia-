@@ -1,6 +1,6 @@
 import "./App.css";
 import Landing from "./components/Landing";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 import Home from './components/account/Home';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import About from "./components/About";
@@ -34,7 +34,7 @@ function App() {
           <Route path="/home/viewedprofile" element={<ProfileData />} />
         </Route>
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   );
 }
