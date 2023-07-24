@@ -1,121 +1,39 @@
-/* 
-footer{
-  background-color: rgb(51, 51, 51);
-  color: rgb(255, 255, 255);
-  padding: 10px;
+
+/* Footer.css */
+.footer {
+  background: linear-gradient(135deg, #fd1d1d, #833ab4, #fd1d1d, #fcb045);
+  padding: 20px;
+  color: #ffffff;
+  font-weight: 500;
+  position: absolute;  
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-row-1 {
   text-align: center;
-  font-size: 16px;
-  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-nav {
-  padding: 30px;
-
-}
-nav ul li a{
-  color: rgb(255, 255, 255);
-  font-size: 22px;
-  font-weight: bold;
-  
+.footer-row-2 {
+  text-align: center;
 }
 
-footer ul li a{
-  color: rgb(255, 255, 255);
-  font-size: 14px;
-  font-weight: bold;
-}
-a:hover {
-  color: rgb(27, 233, 61);
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
 }
 
-a.active {
-  color: blue;
+.footer li {
+  display: inline;
+  margin: 0 10px;
 }
-ul {
-  display: flex;
-  justify-content: space-evenly;
+
+.footer a {
   text-decoration: none;
-  align-content: center;
-  padding: 5px;
+  color: #ffffff;
 }
-
-
-.landing{
-  background-image: url(https://images.unsplash.com/photo-1507101105822-7472b28e22ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=873&q=80);
-  height: auto;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  object-fit: contain;
-}
-
-.landingspace {
-  display: flex;
-  padding: 50px;
-}
-
-.landingspace > div {
-  flex: 1;
-}
-
-.formwrapper{
-  border: 1px solid rgb(207, 203, 203);
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  padding: 15px;
-  border-radius: 10px;
-  width: 80%;
-  backgroundColor: "transparent",
-
-}
-
-.formwrapper h1{
-  font-size: 30px;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-}
-
-.formwrapper h3{
-  font-size: 22px;
-  color: white;
-  text-align: center;
-}
-.formwrapper p{
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-
-}
-
-input {
-  width: 100%;
-  height: 38px;
-  margin: 10px auto 10px auto;
-  padding: 19px;
-  border-radius: 20px;
-  border: none;
-  border-bottom: 1px solid rgb(8, 8, 8);
-  outline: none;
-}
-
-button{
-  height: 38px;
-  padding: 10px;
-  margin: auto;
-  width: 100%;
-  border-radius: 20px;
-  background-color: rgb(219, 78, 13);
-  border: none;
-  cursor: pointer;
-}
- */

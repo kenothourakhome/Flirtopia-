@@ -18,7 +18,7 @@ import Error from "./components/Error";
 function App() {
   return (
     <Router className="App">
-      <Routes>
+      <Routes className="content-wrapper">
         <Route path="/" element={<Landing />}>
           <Route path="/about" element={<About />} />
           <Route path="/features" element={<Features />} />
@@ -34,7 +34,7 @@ function App() {
           <Route path="/home/favourites" element={<Favorites />} />
           <Route path="/home/viewedprofile" element={<ProfileData />} />
         </Route>
-        <Route path="*" element={<Error />}/>
+        <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
     </Router>
