@@ -1,13 +1,22 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import "./Landing.css"
 
 function Navbar() {
   return (
-    <NavLink>
-      <Link to="/about">About</Link>
-      <Link to="/features">Features</Link>
-      <Link to="/safety">Safety</Link>
-      <Link to="/compatibility">Compatibility</Link>
+    <NavLink className="navlinks">
+      <Link to="/about" className="links">
+        About
+      </Link>
+      <Link to="/features" className="links">
+        Features
+      </Link>
+      <Link to="/safety" className="links">
+        Safety
+      </Link>
+      <Link to="/compatibility" className="links">
+        Compatibility
+      </Link>
     </NavLink>
   );
 }

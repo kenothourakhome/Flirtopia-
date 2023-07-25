@@ -1,36 +1,14 @@
-// import React from 'react'
-// import Navbar from './Navbar'
-// import Signup from './Signup'
-// import Signin from './Signin'
-// import "./Landing.css"
-// // import Footer from "./Footer";
-
-// function Landing() {
-//   return (
-//     <div className='landing'>
-//         <Navbar />
-//         <div className='landingspace'>
-//             <div>
-//             <Signup/>
-//             </div>
-//             <div>
-//                 {/* #Should display here */}
-//                 <Signin />
-//             </div>
-//         </div>
-//         {/* <Footer /> */}
-//     </div>
-//   )
-// }
-
-// export default Landing
-
 import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import Navbar from "./Navbar";
 import Signup from "./Signup";
 import Signin from "./Signin";
 import "./Landing.css";
-// import Footer from "./Footer";
+import Footer from "./Footer";
+import About from "./About";
+import Safety from "./Safety";
+import Features from "./Features";
+import Compatibility from "./Compatibility";
 
 function Landing() {
   const [showSignUp, setShowSignUp] = useState(true);
@@ -45,28 +23,25 @@ function Landing() {
 
   return (
     <div className="landing">
-      <Navbar />
       <div className="landingspace">
-        {/* Add an outer container with a fixed height and scrolling */}
         <div className="signup-container">
-          {showSignUp ? <Signup  /> : <Signin   />}
-        </div>
-        <div>
-          {/* Conditional links to switch between Sign Up and Sign In */}
           {showSignUp ? (
-            <p>
-              Already have an account?{" "}
-              <button onClick={handleShowSignIn}>Sign In</button>
-            </p>
+            <Signup handleShowSignIn={handleShowSignIn} />
           ) : (
-            <p>
-              Don't have an account?{" "}
-              <button onClick={handleShowSignUp}>Sign Up</button>
-            </p>
+            <Signin handleShowSignUp={handleShowSignUp} />
           )}
         </div>
+        <div>
+          <Navbar />
+          <Routes>
+            <Route path="/about" element={<About />} />
+            <Route path="/features" element={<Features />} />
+            <Route path="/safety" element={<Safety />} />
+            <Route path="/compatibility" element={<Compatibility />} />
+          </Routes>
+        </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

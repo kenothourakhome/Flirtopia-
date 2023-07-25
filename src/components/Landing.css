@@ -2,7 +2,6 @@
 /* Footer.css */
 .footer {
   background: linear-gradient(135deg, #fd1d1d, #833ab4, #fd1d1d, #fcb045);
-  padding: 20px;
   color: #ffffff;
   font-weight: 500;
   position: absolute;  
@@ -10,15 +9,17 @@
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
+   z-index: -1; 
 }
 
 .footer-row-1 {
   text-align: center;
-  margin-bottom: 10px;
+  margin: 5px;
 }
 
 .footer-row-2 {
   text-align: center;
+  margin: 4px;
 }
 
 .footer ul {
@@ -36,4 +37,19 @@
 .footer a {
   text-decoration: none;
   color: #ffffff;
+}
+
+
+/* Landing Navbar styles */
+
+.navlinks{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.links{
+   color: white;
+   margin-left: 10%;
+   font-size: 18px;
+   font-weight: 900;
 }

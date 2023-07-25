@@ -3,9 +3,9 @@ import { Route, Routes } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Profiles from "./Profiles";
 import Account from "./Account";
-import Messages from "./Messages";
 import Favorites from "./Favorites";
 import "./Home.css";
+import Inbox from "./Inbox";
 
 function Home() {
   return (
@@ -15,7 +15,7 @@ function Home() {
         <Routes>
           <Route path="myaccount" element={<Account />} />
           <Route path="browse" element={<Profiles />} />
-          <Route path="messages" element={<Messages />} />
+          <Route path="messages" element={<Inbox />} />
           <Route path="favourites" element={<Favorites />} />
         </Routes>
       </div>

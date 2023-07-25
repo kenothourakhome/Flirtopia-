@@ -4,13 +4,13 @@ function Error() {
   return (
     <div
       style={{
-        backgroundColor: "grey",
+        backgroundColor: "dodgerBlue",
         fontSize: "16px",
         fontStyle: "italic",
         fontWeight: "bold",
       }}
     >
-      <h1 style={{textAlign: "center", padding: "20%"}}>Error PAGE NOT FOUND!!!!</h1>
+      <h1 style={{textAlign: "center", padding: "25%"}}>Error PAGE NOT FOUND!!!!</h1>
     </div>
   );
 }

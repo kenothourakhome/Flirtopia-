@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Signup() {
+function Signup({ handleShowSignIn }) {
   return (
     <div className="formwrapper">
       <h1>FLIRTOPIA</h1>
@@ -24,14 +24,13 @@ function Signup() {
           <option value="male">Male</option>
           <option value="female">Female</option>
         </select>
-        <p>
-          By creating an account you agree to our{" "}
-          {/* <a href="#" style={{ color: "dodgerblue" }}> Terms & Privacy</a> */}
-        </p>
         <button type="submit">Signup</button>
       </form>
-      <p>
-        Have an account? Then <Link to="/signin">Sign in</Link>.
+      <p >
+        <span className="signword">Have an account ?</span>
+        <Link to="/signin" onClick={handleShowSignIn} id="sign">
+          Sign In...
+        </Link>
       </p>
     </div>
   );
