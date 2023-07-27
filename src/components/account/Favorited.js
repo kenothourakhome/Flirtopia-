@@ -31,7 +31,7 @@ function Favorited({ formData }) {
 
   return (
     <div style={containerStyle}>
-      <img src={formData.profile} alt="avatar" style={avatarStyle} />
+      <img src={formData.avatar_url} alt="avatar" style={avatarStyle} />
       <h3 style={h3Style}>{formData.username}</h3>
       <h3 style={h3Style}>{formData.location}</h3>
       <h3 style={h3Style}>{formData.age}</h3>
