@@ -1,6 +1,6 @@
 import React from "react";
 
-function Favorited({ formData }) {
+function Favorited({ formData, handleDeleteFavorite }) {
   const containerStyle = {
     display: "flex",
     alignItems: "center",
@@ -26,7 +26,11 @@ function Favorited({ formData }) {
     fontSize: "12px",
     padding: "5px 10px",
     margin: "5px",
-    maxWidth: "75px",  
+    maxWidth: "75px",
+  };
+
+  const handleDeleteClick = () => {
+    handleDeleteFavorite(formData.id);
   };
 
   return (
@@ -35,11 +39,12 @@ function Favorited({ formData }) {
       <h3 style={h3Style}>{formData.username}</h3>
       <h3 style={h3Style}>{formData.location}</h3>
       <h3 style={h3Style}>{formData.age}</h3>
-      <button style={buttonStyle}>Delete</button>
+      <button style={buttonStyle} onClick={handleDeleteClick}>
+        Delete
+      </button>
       <button style={buttonStyle}>Chat</button>
     </div>
   );
 }
 
 export default Favorited;
-
