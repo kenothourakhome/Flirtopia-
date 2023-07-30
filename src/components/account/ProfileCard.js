@@ -10,7 +10,7 @@ function ProfileCard({isProfileDataVisible, formData, handleViewClick}) {
       {!isProfileDataVisible && (
         <div className="profile-card">
           <div className="profile-picture">
-            <img src={formData.profile} alt="profile" />
+            <img src={formData.avatar_url} alt="profile" />
           </div>
           <div className="profile-details">
             <br />

@@ -1,47 +1,50 @@
-import React ,{useState} from 'react'
-import ProfileCard from './ProfileCard'
+import React, { useState, useEffect } from "react";
+import ProfileCard from "./ProfileCard";
+import ProfileData from "./ProfileData";
 
 function Profiles() {
+  const [profiles, setProfiles] = useState([]);
+  const [isProfileDataVisible, setIsProfileDataVisible] = useState(false);
+  const [formData, setFormData] = useState(null);
 
-    const formData = {
-      id: 1,
-      first_name: "John",
-      last_name: "Doe",
-      username: "johndoe",
-      profile:
-        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80",
-      email: "john@example.com",
-      age: 30,
-      location: "New York",
-      gender: "Male",
-      seeking_gender: "Female",
-      marital_status: "Single",
-      bio: "Lorem ipsum dolor sit amet...",
-      interest: "Hiking, Photography",
-      height: "6'2\"",
-      ethnicity: "Caucasian",
-      living_with: "Alone",
-      education_level: "Bachelor's Degree",
-      no_of_children: "0",
-      drinking_habits: "Social Drinker",
-      smoking_habits: "Non-Smoker",
-      passion: "Traveling, Music",
-      account_status: "Active",
-      user_id: 101,
-      created_at: "2023-07-23 12:34:56",
-    };
+  useEffect(() => {
+    // Fetch all profiles from the server when the component mounts
+    fetchProfiles();
+  }, []);
 
-    const [isProfileDataVisible, setIsProfileDataVisible] = useState(false);
+  const fetchProfiles = async () => {
+    try {
+      const response = await fetch("http://127.0.0.1:9393/profiles");
+      if (response.ok) {
+        const data = await response.json();
+        setProfiles(data);
+      } else {
+        console.log("Error fetching profiles");
+      }
+    } catch (error) {
+      console.error("Error fetching profiles:", error);
+    }
+  };
 
-    const handleViewClick = () => {
-      // Show the ProfileData when "View" button is clicked
-      setIsProfileDataVisible(true);
-    };
+  const handleViewClick = (profileData) => {
+    // Show the ProfileData and set the formData to the clicked profile data
+    setIsProfileDataVisible(true);
+    setFormData(profileData);
+  };
+
   return (
     <div className="profiles">
-      <ProfileCard isProfileDataVisible={isProfileDataVisible} handleViewClick={handleViewClick} formData={formData}/>
+      {profiles.map((profile) => (
+        <ProfileCard
+          key={profile.id}
+          isProfileDataVisible={isProfileDataVisible}
+          handleViewClick={() => handleViewClick(profile)}
+          formData={profile}
+        />
+      ))}
+      {isProfileDataVisible && formData && <ProfileData formData={formData} />}
     </div>
   );
 }
 
-export default Profiles
+export default Profiles;

@@ -1,39 +1,152 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "./Modal";
 import ProfileData from "./ProfileData";
 
 function Account() {
-  // Sample data to demonstrate the table
-  const initialData = {
-    id: 1,
-    first_name: "John",
-    last_name: "Doe",
-    username: "johndoe",
-    profile:
-      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80",
-    email: "john@example.com",
-    age: 30,
-    location: "New York",
-    gender: "Male",
-    seeking_gender: "Female",
-    marital_status: "Single",
-    bio: "Lorem ipsum dolor sit amet...",
-    interest: "Hiking, Photography",
-    height: "6'2\"",
-    ethnicity: "Caucasian",
-    living_with: "Alone",
-    education_level: "Bachelor's Degree",
-    no_of_children: "0",
-    drinking_habits: "Social Drinker",
-    smoking_habits: "Non-Smoker",
-    passion: "Traveling, Music",
-    account_status: "Active",
-    user_id: 101,
-    created_at: "2023-07-23 12:34:56",
-  };
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [formData, setFormData] = useState({
+  //   // Set the default values to be blank or null for the editable fields
+  //   first_name: "",
+  //   last_name: "",
+  //   username: "",
+  //   email: "",
+  //   age: null,
+  //   gender: "",
+  //   seeking_gender: "",
+  //   location: "",
+  //   avatar_url: "",
+  //   marital_status: "",
+  //   bio: "",
+  //   interest: "",
+  //   height: "",
+  //   ethnicity: "",
+  //   living_with: "",
+  //   education_level: "",
+  //   no_of_children: "",
+  //   drinking_habits: "",
+  //   smoking_habits: "",
+  //   passion: "",
+  //   account_status: "Active",
+  // });
+
+  // // Fetch the last updated user data and post it to profiles on component mount
+  // useEffect(() => {
+  //   fetchLastUpdatedUser();
+  // }, []);
+
+  // const fetchLastUpdatedUser = async () => {
+  //   try {
+  //     const response = await fetch("http://127.0.0.1:9393/users/last_updated");
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       // Update the formData state with the last updated user data
+  //       setFormData({
+  //         first_name: data.first_name || "",
+  //         last_name: data.last_name || "",
+  //         username: data.username || "",
+  //         profile: data.profile || "",
+  //         email: data.email || "",
+  //         age: data.age || null,
+  //         gender: data.gender || "",
+  //         seeking_gender: data.seeking_gender || "",
+  //         // Leave the rest of the fields empty
+  //         location: "",
+  //         avatar_url: "",
+  //         marital_status: "",
+  //         bio: "",
+  //         interest: "",
+  //         height: "",
+  //         ethnicity: "",
+  //         living_with: "",
+  //         education_level: "",
+  //         no_of_children: "",
+  //         drinking_habits: "",
+  //         smoking_habits: "",
+  //         passion: "",
+  //         account_status: "Active",
+  //       });
+  //     } else {
+  //       console.log("Error fetching last updated user data");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching last updated user data:", error);
+  //   }
+  // };
+
+
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [formData, setFormData] = useState(initialData);
+  const [formData, setFormData] = useState({
+    // Set the default values to be blank or null for the editable fields
+    first_name: "",
+    last_name: "",
+    username: "",
+    email: "",
+    age: null,
+    gender: "",
+    seeking_gender: "",
+    location: "",
+    avatar_url: "",
+    marital_status: "",
+    bio: "",
+    interest: "",
+    height: "",
+    ethnicity: "",
+    living_with: "",
+    education_level: "",
+    no_of_children: "",
+    drinking_habits: "",
+    smoking_habits: "",
+    passion: "",
+    account_status: "Active",
+  });
+
+  // Fetch the last updated user data and post it to profiles on component mount
+  useEffect(() => {
+    fetchLastUpdatedUser();
+  }, []);
+
+  const fetchLastUpdatedUser = async () => {
+    try {
+      const response = await fetch("http://127.0.0.1:9393/users/last_updated");
+      if (response.ok) {
+        const data = await response.json();
+        // Update the formData state with the last updated user data
+        console.log(data)
+        setFormData({
+          first_name: data.first_name || "",
+          last_name: data.last_name || "",
+          username: data.username || "",
+          profile: data.profile || "",
+          email: data.email || "",
+          age: data.age || null,
+          gender: data.gender || "",
+          seeking_gender: data.seeking_gender || "",
+          // Leave the rest of the fields empty
+          location: "",
+          avatar_url: "",
+          marital_status: "",
+          bio: "",
+          interest: "",
+          height: "",
+          ethnicity: "",
+          living_with: "",
+          education_level: "",
+          no_of_children: "",
+          drinking_habits: "",
+          smoking_habits: "",
+          passion: "",
+          account_status: "Active",
+        });
+      } else {
+        console.log("Error fetching last updated user data");
+      }
+    } catch (error) {
+      console.error("Error fetching last updated user data:", error);
+    }
+  };
+
+  // console.log(formData)
 
   const handleEditClick = () => {
     setIsModalOpen(true);
@@ -47,12 +160,27 @@ function Account() {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    // Add your form submission logic here (e.g., API call to update data)
-    console.log(formData);
-    setIsModalOpen(false); // Close the modal after submitting
+    try {
+      // Makes a POST request to update the profile data
+      const response = await fetch("http://127.0.0.1:9393/profiles", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log("Profile updated successfully!");
+        setIsModalOpen(false); // Close the modal after submitting
+      } else {
+        console.error("Error updating profile");
+      }
+    } catch (error) {
+      console.error("Error updating profile:", error);
+    }
   };
 
   ///  Drop downs
@@ -91,10 +219,6 @@ function Account() {
       <Modal isOpen={isModalOpen} onClose={handleModalClose}>
         <h2>Edit Details</h2>
         <form onSubmit={handleFormSubmit}>
-          <label>
-            ID:
-            <input type="text" name="id" value={formData.id} readOnly />
-          </label>
           <label>
             First Name:
             <input
@@ -332,24 +456,6 @@ function Account() {
               type="text"
               name="account_status"
               value={formData.account_status}
-              readOnly
-            />
-          </label>
-          <label>
-            User ID:
-            <input
-              type="text"
-              name="user_id"
-              value={formData.user_id}
-              readOnly
-            />
-          </label>
-          <label>
-            Created At:
-            <input
-              type="text"
-              name="created_at"
-              value={formData.created_at}
               readOnly
             />
           </label>

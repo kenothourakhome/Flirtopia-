@@ -7,10 +7,6 @@ function ProfileData({formData}) {
       <table>
         <tbody>
           <tr>
-            <td>ID:</td>
-            <td>{formData.id}</td>
-          </tr>
-          <tr>
             <td>First Name:</td>
             <td>{formData.first_name}</td>
           </tr>
@@ -84,7 +80,7 @@ function ProfileData({formData}) {
           </tr>
           <tr>
             <td>Profile URL:</td>
-            <td>{formData.profile}</td>
+            <td>{formData.avatar_url}</td>
           </tr>
 
           <tr>
@@ -94,14 +90,6 @@ function ProfileData({formData}) {
           <tr>
             <td>Account Status:</td>
             <td>{formData.account_status}</td>
-          </tr>
-          <tr>
-            <td>User ID:</td>
-            <td>{formData.user_id}</td>
-          </tr>
-          <tr>
-            <td>Created At:</td>
-            <td>{formData.created_at}</td>
           </tr>
         </tbody>
       </table>
