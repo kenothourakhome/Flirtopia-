@@ -1,9 +1,39 @@
-import React from 'react'
+import React from "react";
 
-function ProfileData({formData}) {
+function ProfileData({ formData }) {
   return (
     <div>
-      <img id='avatar' src={formData.profile} alt="avatar" />
+      <img id="avatar" src={formData.avatar_url} alt="avatar" />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          alignItems: "center",
+          margin: "4%",
+        }}
+      >
+        <button
+          style={{
+            maxWidth: "5em",
+            padding: "4px",
+            backgroundColor: "green",
+            color: "white",
+          }}
+        >
+          Favorite
+        </button>
+        <button
+          style={{
+            maxWidth: "5em",
+            padding: "4px",
+            backgroundColor: "green",
+            color: "white",
+          }}
+        >
+          Chat
+        </button>
+      </div>
+
       <table>
         <tbody>
           <tr>
@@ -97,4 +127,4 @@ function ProfileData({formData}) {
   );
 }
 
-export default ProfileData
+export default ProfileData;

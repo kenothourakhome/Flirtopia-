@@ -3,76 +3,6 @@ import Modal from "./Modal";
 import ProfileData from "./ProfileData";
 
 function Account() {
-  // const [isModalOpen, setIsModalOpen] = useState(false);
-  // const [formData, setFormData] = useState({
-  //   // Set the default values to be blank or null for the editable fields
-  //   first_name: "",
-  //   last_name: "",
-  //   username: "",
-  //   email: "",
-  //   age: null,
-  //   gender: "",
-  //   seeking_gender: "",
-  //   location: "",
-  //   avatar_url: "",
-  //   marital_status: "",
-  //   bio: "",
-  //   interest: "",
-  //   height: "",
-  //   ethnicity: "",
-  //   living_with: "",
-  //   education_level: "",
-  //   no_of_children: "",
-  //   drinking_habits: "",
-  //   smoking_habits: "",
-  //   passion: "",
-  //   account_status: "Active",
-  // });
-
-  // // Fetch the last updated user data and post it to profiles on component mount
-  // useEffect(() => {
-  //   fetchLastUpdatedUser();
-  // }, []);
-
-  // const fetchLastUpdatedUser = async () => {
-  //   try {
-  //     const response = await fetch("http://127.0.0.1:9393/users/last_updated");
-  //     if (response.ok) {
-  //       const data = await response.json();
-  //       // Update the formData state with the last updated user data
-  //       setFormData({
-  //         first_name: data.first_name || "",
-  //         last_name: data.last_name || "",
-  //         username: data.username || "",
-  //         profile: data.profile || "",
-  //         email: data.email || "",
-  //         age: data.age || null,
-  //         gender: data.gender || "",
-  //         seeking_gender: data.seeking_gender || "",
-  //         // Leave the rest of the fields empty
-  //         location: "",
-  //         avatar_url: "",
-  //         marital_status: "",
-  //         bio: "",
-  //         interest: "",
-  //         height: "",
-  //         ethnicity: "",
-  //         living_with: "",
-  //         education_level: "",
-  //         no_of_children: "",
-  //         drinking_habits: "",
-  //         smoking_habits: "",
-  //         passion: "",
-  //         account_status: "Active",
-  //       });
-  //     } else {
-  //       console.log("Error fetching last updated user data");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error fetching last updated user data:", error);
-  //   }
-  // };
-
 
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -146,8 +76,6 @@ function Account() {
     }
   };
 
-  // console.log(formData)
-
   const handleEditClick = () => {
     setIsModalOpen(true);
   };
@@ -174,7 +102,7 @@ function Account() {
 
       if (response.ok) {
         console.log("Profile updated successfully!");
-        setIsModalOpen(false); // Close the modal after submitting
+        setIsModalOpen(false); // Close modal after submitting
       } else {
         console.error("Error updating profile");
       }
